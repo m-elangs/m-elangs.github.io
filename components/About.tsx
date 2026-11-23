@@ -55,7 +55,7 @@ export default function About() {
                   3
                 </p>
                 <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  coding experience
+                  Years Coding Experience
                 </p>
               </div>
             </div>

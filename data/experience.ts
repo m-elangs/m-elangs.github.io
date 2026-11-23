@@ -11,7 +11,7 @@ export interface ExperienceItem {
   organization: string;
   location: string;
   note: string;
-  type: "work" | "education";
+  type: "work" | "education" | "internship" | "Internship";
 }
 
 export const services: ServiceItem[] = [
@@ -52,35 +52,19 @@ export const services: ServiceItem[] = [
 
 export const experience: ExperienceItem[] = [
   {
-    period: "2024 — Present",
-    role: "Independent Creative Developer & Art Director [GANTI]",
-    organization: "Arga Pradipta Studio",
+    period: "2025",
+    role: "Cyber Defense Incident Responder",
+    organization: "Komdigi",
     location: "Surabaya, Indonesia",
-    note: "Leading design and frontend architecture for architecture firms, design publications, and independent product teams. [GANTI]",
-    type: "work",
-  },
-  {
-    period: "2022 — 2024",
-    role: "Senior Frontend Developer [GANTI]",
-    organization: "Biro Visual Nusantara",
-    location: "Jakarta (Remote)",
-    note: "Built editorial flagships and reusable design systems across 14 studio launches with a strict 95+ Lighthouse baseline. [GANTI]",
-    type: "work",
-  },
-  {
-    period: "2020 — 2022",
-    role: "UI/UX Designer & Frontend Engineer [GANTI]",
-    organization: "Karya Digital Collective",
-    location: "Surabaya, Indonesia",
-    note: "Bridged visual design and React implementation for hospitality and cultural clients across Southeast Asia. [GANTI]",
-    type: "work",
+    note: "Monitor security alerts and detect potential threats using SIEM tools and intrusion detection systems. Investigate, analyze, and contain security incidents such as malware infections, phishing attacks, and unauthorized access.",
+    type: "Internship",
   },
   {
     period: "2022 — 2026",
-    role: "informatic",
+    role: "Informatics",
     organization: "Telkom University (TelU)",
     location: "Surabaya, Indonesia",
-    note: "Thesis on Swiss typographic grids adapted for fluid digital editorial interfaces. [GANTI]",
+    note: "Focused on web development, software engineering, and responsive interactive web applications.",
     type: "education",
   },
 ];

@@ -1,7 +1,7 @@
 import { experience } from "@/data/experience";
 
 export default function Experience() {
-  const workItems = experience.filter((item) => item.type === "work");
+  const workItems = experience.filter((item) => item.type === "work" || item.type.toLowerCase() === "internship");
   const educationItems = experience.filter((item) => item.type === "education");
 
   return (
@@ -14,14 +14,14 @@ export default function Experience() {
             <span className="text-border">/</span>
             <span className="type-label text-muted">Chronology</span>
           </div>
-          <span className="type-label text-muted text-left sm:text-right">2016 &mdash; Present</span>
+          <span className="type-label text-muted text-left sm:text-right">2022 &mdash; Present</span>
         </div>
 
         <div className="editorial-grid gap-y-12">
           {/* Work History */}
           <div className="col-span-4 md:col-span-8 lg:col-span-7 space-y-6 sm:space-y-8">
             <h3 className="type-label text-[#0F172A] px-1 text-[16px] sm:text-[17px]">
-              Professional Practice &middot; Work
+              Professional Practice &middot; Work &amp; Internship
             </h3>
             <div className="space-y-4">
               {workItems.map((item, idx) => (

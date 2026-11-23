@@ -43,7 +43,7 @@ export default function About() {
             <div className="mt-8 pt-8 border-t border-[rgba(15,23,42,0.08)] flex items-center gap-8 sm:gap-14">
               <div>
                 <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  4<span className="text-[#856404] font-normal">+</span>
+                  6
                 </p>
                 <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
                   Projek
@@ -52,7 +52,7 @@ export default function About() {
               <div className="h-14 w-px bg-[rgba(15,23,42,0.15)]" />
               <div>
                 <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  2<span className="text-[#856404] font-normal">+</span>
+                  3
                 </p>
                 <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
                   Tahun Pengalaman Coding

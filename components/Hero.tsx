@@ -191,30 +191,6 @@ export default function Hero() {
                 Send Email
               </a>
             </div>
-
-            {/* Quick Stats Counter: 4+ Projek | 2+ Tahun Pengalaman Coding */}
-            <div
-              data-hero-fade
-              className="pt-6 mt-4 border-t border-[rgba(15,23,42,0.1)] flex items-center gap-8 sm:gap-14"
-            >
-              <div>
-                <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  4<span className="text-[#856404] font-normal">+</span>
-                </p>
-                <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Projek
-                </p>
-              </div>
-              <div className="h-14 w-px bg-[rgba(15,23,42,0.15)]" />
-              <div>
-                <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  2<span className="text-[#856404] font-normal">+</span>
-                </p>
-                <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Tahun Pengalaman Coding
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Kolom Kanan: Foto Profil Editorial (Posisi seimbang lebih ke tengah) */}

@@ -10,13 +10,13 @@ export default function Work() {
     <section id="work" aria-label="Selected Work" className="py-20 sm:py-24 md:py-36 bg-[#FFFFFF] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="border-b border-[rgba(15,23,42,0.08)] mb-10 sm:mb-14 flex items-center justify-between pb-6">
-          <div className="flex items-center gap-3">
+        <div className="border-b border-[rgba(15,23,42,0.08)] mb-10 sm:mb-14 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 pb-5 sm:pb-6">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <span className="type-label text-[#856404]">03 / Selected Work</span>
             <span className="text-border">/</span>
             <span className="type-label text-muted">2024 &mdash; 2026</span>
           </div>
-          <span className="type-label text-muted">Index ({projects.length})</span>
+          <span className="type-label text-muted text-left sm:text-right">Index ({projects.length})</span>
         </div>
 
         {/* Project Cards List - Always Visible & Fully Responsive with Dedicated Visual Plates */}
@@ -35,7 +35,7 @@ export default function Work() {
                   {/* Left Column: Project Details & Action */}
                   <div className="lg:col-span-7 space-y-4 sm:space-y-6">
                     {/* Index & Metadata Row */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-[rgba(15,23,42,0.06)] pb-3">
                       <div className="flex items-center gap-3">
                         <span className="font-serif text-3xl sm:text-4xl text-[#856404] font-light">
                           {project.index}
@@ -45,7 +45,9 @@ export default function Work() {
                           {project.year}
                         </span>
                       </div>
-                      <span className="type-label text-muted text-[16px]">{project.category}</span>
+                      <span className="type-label text-muted text-[15px] sm:text-[16px] text-left sm:text-right">
+                        {project.category}
+                      </span>
                     </div>
 
                     {/* Title */}

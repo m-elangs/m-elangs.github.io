@@ -5,13 +5,13 @@ export default function Services() {
     <section id="services" aria-label="Services and Capabilities" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="flex items-center justify-between border-b border-[rgba(15,23,42,0.08)] pb-6 mb-10 md:mb-12">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-[rgba(15,23,42,0.08)] pb-5 sm:pb-6 mb-10 md:mb-12">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <span className="type-label text-[#856404]">04 / Services</span>
             <span className="text-border">/</span>
             <span className="type-label text-muted">Core Disciplines</span>
           </div>
-          <span className="type-label text-muted">Table Overview</span>
+          <span className="type-label text-muted text-left sm:text-right">Table Overview</span>
         </div>
 
         {/* Editorial Table in Distinct Elevated Cards */}

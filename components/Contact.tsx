@@ -98,13 +98,13 @@ export default function Contact() {
     >
       <div className="editorial-container space-y-12 sm:space-y-16">
         {/* Section Header */}
-        <div className="flex items-center justify-between border-b border-[rgba(15,23,42,0.08)] pb-6">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-[rgba(15,23,42,0.08)] pb-5 sm:pb-6">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <span className="type-label text-[#856404]">07 / Inquiries</span>
             <span className="text-border">/</span>
             <span className="type-label text-muted">Collaborations</span>
           </div>
-          <span className="type-label text-muted">Surabaya, Indonesia</span>
+          <span className="type-label text-muted text-left sm:text-right">Surabaya, Indonesia</span>
         </div>
 
         {/* Large Statement Call to Action */}

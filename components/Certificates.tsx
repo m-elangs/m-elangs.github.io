@@ -5,13 +5,13 @@ export default function Certificates() {
     <section id="credentials" aria-label="Certifications and Credentials" className="py-24 md:py-36 hairline-top bg-[#FFFFFF] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="flex items-center justify-between hairline-bottom pb-6 mb-10 md:mb-12">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 hairline-bottom pb-5 sm:pb-6 mb-10 md:mb-12">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <span className="type-label text-[#856404]">06 / Credentials</span>
             <span className="text-border">/</span>
             <span className="type-label text-muted">Certifications &amp; Accreditations</span>
           </div>
-          <span className="type-label text-muted">Archive ({certificates.length})</span>
+          <span className="type-label text-muted text-left sm:text-right">Archive ({certificates.length})</span>
         </div>
 
         {/* Credentials Table */}

@@ -23,9 +23,9 @@ export default function About() {
     <section id="about" aria-label="About the Practice" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
-        <div className="flex items-center justify-between border-b border-[rgba(15,23,42,0.08)] pb-6 mb-12 md:mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-[rgba(15,23,42,0.08)] pb-5 sm:pb-6 mb-10 md:mb-16">
           <p className="type-label text-[#856404]">02 / About</p>
-          <span className="type-label text-muted">Philosophy &amp; Stance</span>
+          <span className="type-label text-muted text-left sm:text-right">Philosophy &amp; Stance</span>
         </div>
 
         <div className="space-y-10 sm:space-y-14">
@@ -46,7 +46,7 @@ export default function About() {
                   6
                 </p>
                 <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Projek
+                  Projects
                 </p>
               </div>
               <div className="h-14 w-px bg-[rgba(15,23,42,0.15)]" />
@@ -55,7 +55,7 @@ export default function About() {
                   3
                 </p>
                 <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Tahun Pengalaman Coding
+                  coding experience
                 </p>
               </div>
             </div>

@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F5F2EA"/>
+  <rect x="60" y="60" width="1080" height="680" stroke="#16231C" stroke-opacity="0.14" stroke-width="1"/>
+  
+  <!-- Pavilion study in Forest & Ivory -->
+  <rect x="180" y="140" width="840" height="520" fill="#EBE6DA" stroke="#2F4A3A" stroke-opacity="0.3" stroke-width="1"/>
+  <line x1="180" y1="360" x2="1020" y2="360" stroke="#16231C" stroke-opacity="0.14"/>
+  <line x1="460" y1="140" x2="460" y2="660" stroke="#16231C" stroke-opacity="0.14"/>
+  <line x1="740" y1="140" x2="740" y2="660" stroke="#16231C" stroke-opacity="0.14"/>
+  
+  <text x="210" y="200" font-family="Georgia, serif" font-size="22" fill="#16231C">PLATE 02: TEAK &amp; RAW CAST CONCRETE</text>
+  <text x="210" y="230" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#B89B5E" letter-spacing="2">LONGITUDINAL SECTION // 1:50</text>
+</svg>

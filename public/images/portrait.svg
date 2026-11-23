@@ -1,0 +1,12 @@
+<svg width="800" height="1000" viewBox="0 0 800" height="1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#EBE6DA"/>
+  <rect x="24" y="24" width="752" height="952" stroke="#16231C" stroke-opacity="0.14" stroke-width="1"/>
+  
+  <!-- Architectural portrait silhouette in Forest & Champagne -->
+  <circle cx="400" cy="380" r="140" fill="#F5F2EA" stroke="#B89B5E" stroke-opacity="0.5" stroke-width="1.5"/>
+  <path d="M220 740 C220 540, 300 480, 400 480 C500 480, 580 540, 580 740 Z" fill="#2F4A3A" stroke="#16231C" stroke-opacity="0.3"/>
+  
+  <text x="56" y="80" font-family="Georgia, serif" font-size="24" fill="#16231C">PORTRAIT // ES</text>
+  <text x="56" y="110" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#B89B5E" letter-spacing="3">SURABAYA, INDONESIA</text>
+  <text x="744" y="930" text-anchor="end" font-family="system-ui, sans-serif" font-size="10" fill="#4B5E52" letter-spacing="2">EST. 2020</text>
+</svg>

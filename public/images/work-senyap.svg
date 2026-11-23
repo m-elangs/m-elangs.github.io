@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EBE6DA"/>
+  <rect x="40" y="40" width="1120" height="720" stroke="#16231C" stroke-opacity="0.14" stroke-width="1"/>
+
+  <!-- Publication spread in Ivory & Forest -->
+  <rect x="220" y="160" width="360" height="500" fill="#F5F2EA" stroke="#16231C" stroke-opacity="0.2"/>
+  <rect x="620" y="160" width="360" height="500" fill="#F5F2EA" stroke="#16231C" stroke-opacity="0.2"/>
+  <line x1="260" y1="220" x2="480" y2="220" stroke="#B89B5E" stroke-width="1.5"/>
+  <line x1="260" y1="260" x2="540" y2="260" stroke="#16231C" stroke-opacity="0.2"/>
+  <line x1="260" y1="290" x2="540" y2="290" stroke="#16231C" stroke-opacity="0.2"/>
+  <line x1="260" y1="320" x2="440" y2="320" stroke="#16231C" stroke-opacity="0.2"/>
+  
+  <text x="80" y="100" font-family="Georgia, serif" font-size="28" fill="#16231C" letter-spacing="1">RUANG SENYAP</text>
+  <text x="80" y="130" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#B89B5E" letter-spacing="3">CULTURAL ESSAYS &amp; SOUNDSCAPES // ISSUE 04</text>
+  <text x="1040" y="100" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#4B5E52" letter-spacing="2">SURABAYA // 2024</text>
+</svg>

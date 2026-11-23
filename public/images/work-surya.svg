@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EBE6DA"/>
+  <rect x="40" y="40" width="1120" height="720" stroke="#16231C" stroke-opacity="0.14" stroke-width="1"/>
+  
+  <!-- Ceramic vessel silhouette in Deep Forest -->
+  <circle cx="600" cy="440" r="220" fill="#F5F2EA" stroke="#B89B5E" stroke-opacity="0.5" stroke-width="1.5"/>
+  <ellipse cx="600" cy="240" rx="90" ry="24" fill="#E2DCCF" stroke="#2F4A3A" stroke-opacity="0.4"/>
+  <path d="M510 240 C510 320, 380 400, 380 500 C380 620, 480 660, 600 660 C720 660, 820 620, 820 500 C820 400, 690 320, 690 240 Z" fill="#2F4A3A" stroke="#B89B5E" stroke-opacity="0.7" stroke-width="1.5"/>
+  
+  <text x="80" y="100" font-family="Georgia, serif" font-size="28" fill="#16231C" letter-spacing="1">ATELIER SURYA</text>
+  <text x="80" y="130" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#B89B5E" letter-spacing="3">OBJECT SHOWROOM // STONEWARE VESSELS</text>
+  <text x="1040" y="100" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#4B5E52" letter-spacing="2">EDITION 120 // BALI</text>
+</svg>

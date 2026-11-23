@@ -93,7 +93,7 @@ export default function Work() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         <div className="absolute bottom-3 right-3 px-3.5 py-2 rounded-lg bg-[#FFFFFF]/95 backdrop-blur-xs text-[15px] sm:text-[16px] font-mono uppercase tracking-wider text-[#0F172A] font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-xs">
-                          Inspect &nearr;
+                          Inspect &rarr;
                         </div>
                       </div>
                     </TransitionLink>

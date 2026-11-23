@@ -171,11 +171,8 @@ export default function Contact() {
                       {social.label}
                     </span>
                   </div>
-                  <span
-                    aria-hidden="true"
-                    className="text-lg text-muted group-hover:text-[#856404] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                  >
-                    &nearr;
+                  <span className="text-sm font-semibold uppercase tracking-wider text-[#856404] opacity-0 group-hover:opacity-100 transition-opacity">
+                    Visit &rarr;
                   </span>
                 </div>
                 <p className="type-meta text-muted text-[17px] font-mono truncate">

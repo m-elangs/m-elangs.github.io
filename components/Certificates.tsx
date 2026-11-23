@@ -30,7 +30,7 @@ export default function Certificates() {
               </div>
 
               {/* Title & Issuer */}
-              <div className="col-span-4 md:col-span-6 mt-2 sm:mt-3 md:mt-0 space-y-1.5 sm:space-y-2">
+              <div className="col-span-4 md:col-span-7 mt-2 sm:mt-3 md:mt-0 space-y-1.5 sm:space-y-2">
                 <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-fg font-normal group-hover:text-[#0F172A] transition-colors leading-snug">
                   {cert.title.replace(" [GANTI]", "")}
                 </h3>
@@ -39,11 +39,8 @@ export default function Certificates() {
                 </p>
               </div>
 
-              {/* Credential ID & Link */}
-              <div className="col-span-4 md:col-span-4 flex flex-wrap items-center justify-between md:justify-end gap-3 sm:gap-6 mt-3 sm:mt-4 md:mt-0">
-                <code className="type-label font-mono text-[#526071] text-[15px] sm:text-[16px] font-semibold break-all">
-                  {cert.credentialId.replace("-GANTI", "")}
-                </code>
+              {/* Action Link */}
+              <div className="col-span-4 md:col-span-3 flex items-center justify-start md:justify-end mt-3 sm:mt-4 md:mt-0">
                 <a
                   href={cert.verifyUrl}
                   target="_blank"

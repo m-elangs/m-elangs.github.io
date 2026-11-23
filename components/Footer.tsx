@@ -41,9 +41,8 @@ export default function Footer() {
           <p className="text-[16px] sm:text-[17px] font-medium uppercase tracking-[0.08em] text-[#CBD5E1]">
             &copy; {currentYear} Mochamad Elang Samudra. All rights reserved.
           </p>
-          <div className="text-[16px] lg:text-[18px] font-medium uppercase tracking-[0.08em] text-[#94A3B8] flex flex-wrap items-center gap-4 sm:gap-6">
-            <span>Next.js 15 &middot; GSAP &middot; Lenis</span>
-            <span className="text-[#CBD5E1]">Surabaya, Indonesia</span>
+          <div className="text-[16px] lg:text-[18px] font-medium uppercase tracking-[0.08em] text-[#CBD5E1]">
+            <span>Surabaya, Indonesia</span>
           </div>
         </div>
       </div>

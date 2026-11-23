@@ -107,9 +107,7 @@ export default function Hero() {
       <div className="editorial-container">
         <div data-hero-fade className="p-4 sm:p-5 rounded-xl bg-[#F4F6F8] border border-[rgba(15,23,42,0.08)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <span className="type-label text-[#856404] text-[16px]">07°15′55″ S 112°45′02″ E</span>
-            <span className="text-border">/</span>
-            <span className="type-label text-muted text-[16px]">{siteProfile.location}</span>
+            <span className="type-label text-[#856404] text-[16px] font-semibold">{siteProfile.location}</span>
           </div>
           <p className="type-label text-muted text-[16px]">
             Portfolio &middot; Edition 2026

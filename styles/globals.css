@@ -340,3 +340,137 @@ canvas {
     animation: none !important;
   }
 }
+
+/* ==========================================================================
+   INTERACTIVE WORKSPACE SVG ANIMATIONS (SCOPED TO .ws-scene)
+   ========================================================================== */
+.ws-scene {
+  --ws-typing-speed: 0.55s;
+  --ws-breath-speed: 4.2s;
+  --ws-glow-opacity: 0.22;
+  --ws-particle-opacity: 0.38;
+  --ws-particle-speed: 6s;
+}
+
+.ws-scene.ws-dark {
+  --ws-glow-opacity: 0.55;
+}
+
+.ws-scene.ws-focus {
+  --ws-typing-speed: 0.22s;
+  --ws-breath-speed: 2.8s;
+  --ws-particle-opacity: 0.95;
+  --ws-particle-speed: 3.2s;
+}
+
+@keyframes wsHeadBob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(2.8px) rotate(0.9deg); }
+}
+
+@keyframes wsBodyBreath {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(1.8px); }
+}
+
+@keyframes wsEyeBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%, 97% { transform: scaleY(0.08); }
+}
+
+@keyframes wsTypeLeft {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  30% { transform: translateY(-4px) rotate(-2deg); }
+  60% { transform: translateY(1px) rotate(1deg); }
+}
+
+@keyframes wsTypeRight {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  40% { transform: translateY(-4.5px) rotate(2deg); }
+  75% { transform: translateY(1.5px) rotate(-1deg); }
+}
+
+@keyframes wsScreenPulse {
+  0%, 100% { opacity: var(--ws-glow-opacity); }
+  50% { opacity: calc(var(--ws-glow-opacity) + 0.14); }
+}
+
+@keyframes wsSteamRise {
+  0% { transform: translateY(6px) scaleX(0.9); opacity: 0; }
+  35% { opacity: 0.65; }
+  100% { transform: translateY(-28px) scaleX(1.15); opacity: 0; }
+}
+
+@keyframes wsFloatParticle {
+  0% { transform: translateY(14px) scale(0.85); opacity: 0; }
+  20% { opacity: var(--ws-particle-opacity); }
+  80% { opacity: var(--ws-particle-opacity); }
+  100% { transform: translateY(-46px) scale(1.05); opacity: 0; }
+}
+
+@keyframes wsTwinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes wsCloudDrift {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(12px); }
+}
+
+.ws-anim-head {
+  transform-origin: 310px 210px;
+  animation: wsHeadBob var(--ws-breath-speed) ease-in-out infinite;
+}
+
+.ws-anim-torso {
+  transform-origin: 310px 340px;
+  animation: wsBodyBreath var(--ws-breath-speed) ease-in-out infinite;
+}
+
+.ws-anim-eye-left {
+  transform-origin: 289px 181px;
+  animation: wsEyeBlink 4.8s ease-in-out infinite;
+}
+
+.ws-anim-eye-right {
+  transform-origin: 332px 181px;
+  animation: wsEyeBlink 4.8s ease-in-out infinite;
+}
+
+.ws-anim-hand-left {
+  transform-origin: 235px 350px;
+  animation: wsTypeLeft var(--ws-typing-speed) ease-in-out infinite;
+}
+
+.ws-anim-hand-right {
+  transform-origin: 375px 350px;
+  animation: wsTypeRight var(--ws-typing-speed) ease-in-out infinite;
+  animation-delay: 0.16s;
+}
+
+.ws-anim-screen-glow {
+  animation: wsScreenPulse 2.6s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+.ws-steam-1 { animation: wsSteamRise 3.2s ease-out infinite; }
+.ws-steam-2 { animation: wsSteamRise 3.2s ease-out infinite 1.1s; }
+.ws-steam-3 { animation: wsSteamRise 3.2s ease-out infinite 2.1s; }
+
+.ws-particle-1 { animation: wsFloatParticle var(--ws-particle-speed) ease-in-out infinite; }
+.ws-particle-2 { animation: wsFloatParticle var(--ws-particle-speed) ease-in-out infinite 1.2s; }
+.ws-particle-3 { animation: wsFloatParticle var(--ws-particle-speed) ease-in-out infinite 2.4s; }
+.ws-particle-4 { animation: wsFloatParticle var(--ws-particle-speed) ease-in-out infinite 3.5s; }
+
+.ws-star-1 { animation: wsTwinkle 2.8s ease-in-out infinite; transform-origin: center; }
+.ws-star-2 { animation: wsTwinkle 3.6s ease-in-out infinite 0.9s; transform-origin: center; }
+.ws-cloud-drift { animation: wsCloudDrift 9s ease-in-out infinite; }
+
+.ws-outfit-layer {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.ws-theme-transition {
+  transition: fill 0.45s ease, stroke 0.45s ease, opacity 0.45s ease;
+}

@@ -1,4 +1,5 @@
 import { siteProfile } from "@/data/site";
+import WorkspaceScene from "@/components/WorkspaceScene";
 
 export default function About() {
   const studioPrinciples = [
@@ -29,34 +30,46 @@ export default function About() {
         </div>
 
         <div className="space-y-10 sm:space-y-14">
-          {/* Statement & Ethos Card */}
-          <div className="p-6 sm:p-10 md:p-14 rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#FFFFFF] shadow-sm">
-            <p className="type-label text-[#856404] mb-3 text-[16px]">Manifesto</p>
-            <h2 className="font-serif text-[clamp(32px,3.5vw,54px)] text-fg font-normal leading-snug max-w-4xl">
-              Turning ideas into functional applications through thoughtful development.
-            </h2>
-            <p className="type-body text-muted leading-relaxed mt-6 sm:mt-8 max-w-4xl">
-              {siteProfile.bio}
-            </p>
+          {/* Statement, Ethos & Interactive 3D Workspace Side-by-Side */}
+          <div className="p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#FFFFFF] shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
+              {/* Left Column: Manifesto, Bio & Metrics */}
+              <div className="lg:col-span-6 xl:col-span-7 flex flex-col justify-between">
+                <div>
+                  <p className="type-label text-[#856404] mb-3 text-[15px] sm:text-[16px]">Manifesto</p>
+                  <h2 className="font-serif text-[clamp(28px,3vw,46px)] text-fg font-normal leading-snug">
+                    Turning ideas into functional applications through thoughtful development.
+                  </h2>
+                  <p className="type-body text-muted leading-relaxed mt-5 sm:mt-6">
+                    {siteProfile.bio}
+                  </p>
+                </div>
 
-            {/* Verified Practice Metrics */}
-            <div className="mt-8 pt-8 border-t border-[rgba(15,23,42,0.08)] flex items-center gap-8 sm:gap-14">
-              <div>
-                <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  6
-                </p>
-                <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Projects
-                </p>
+                {/* Verified Practice Metrics */}
+                <div className="mt-7 sm:mt-8 pt-6 sm:pt-8 border-t border-[rgba(15,23,42,0.08)] flex items-center gap-6 sm:gap-12">
+                  <div>
+                    <p className="font-serif text-4xl sm:text-5xl font-light text-[#0F172A] tracking-tight">
+                      6
+                    </p>
+                    <p className="text-[15px] sm:text-[17px] font-semibold text-[#526071] mt-1">
+                      Projects
+                    </p>
+                  </div>
+                  <div className="h-12 sm:h-14 w-px bg-[rgba(15,23,42,0.15)]" />
+                  <div>
+                    <p className="font-serif text-4xl sm:text-5xl font-light text-[#0F172A] tracking-tight">
+                      3
+                    </p>
+                    <p className="text-[15px] sm:text-[17px] font-semibold text-[#526071] mt-1">
+                      Years Coding Experience
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="h-14 w-px bg-[rgba(15,23,42,0.15)]" />
-              <div>
-                <p className="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-[#0F172A] tracking-tight">
-                  3
-                </p>
-                <p className="text-[17px] sm:text-[18px] font-semibold text-[#526071] mt-1.5">
-                  Years Coding Experience
-                </p>
+
+              {/* Right Column: Interactive 3D Workspace Illustration */}
+              <div className="lg:col-span-6 xl:col-span-5 w-full max-w-[460px] mx-auto lg:max-w-none">
+                <WorkspaceScene />
               </div>
             </div>
           </div>

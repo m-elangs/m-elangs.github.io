@@ -669,7 +669,8 @@ html[data-site-theme="gradient"] .border-\[rgba\(15\,23\,42\,0\.12\)\] {
 
 /* Primary Action Buttons */
 html[data-site-theme="gradient"] a.bg-\[\#0F172A\],
-html[data-site-theme="gradient"] button.bg-\[\#0F172A\] {
+html[data-site-theme="gradient"] button.bg-\[\#0F172A\],
+html[data-site-theme="gradient"] .nav-pill-active {
   background: linear-gradient(135deg, #0d9488 0%, #6d28d9 100%) !important;
   color: #ffffff !important;
   border-color: rgba(45, 212, 191, 0.35) !important;

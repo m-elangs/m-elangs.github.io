@@ -11,8 +11,8 @@ import { usePageTransition } from "@/components/providers/TransitionProvider";
 import TransitionLink from "@/components/motion/TransitionLink";
 
 const navLinks = [
-  { label: "Selected Work", id: "work" },
   { label: "About", id: "about" },
+  { label: "Selected Work", id: "work" },
   { label: "Services", id: "services" },
   { label: "Stack", id: "stack" },
   { label: "Experience", id: "experience" },
@@ -47,6 +47,48 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>("");
+
+  // Deteksi section aktif berdasarkan posisi scroll
+  useEffect(() => {
+    if (pathname.startsWith("/work")) {
+      setActiveId("work");
+      return;
+    }
+
+    const updateActiveSection = () => {
+      if (window.scrollY < 220) {
+        setActiveId("");
+        return;
+      }
+
+      const threshold = window.innerHeight * 0.38;
+      let current = "";
+
+      for (const link of navLinks) {
+        const el = document.getElementById(link.id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= threshold && rect.bottom >= 100) {
+          current = link.id;
+          break;
+        }
+        if (rect.top <= threshold) {
+          current = link.id;
+        }
+      }
+
+      setActiveId(current);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [pathname]);
 
   // Navbar otomatis mengecil atau bersembunyi saat scroll cepat ke bawah, muncul saat scroll ke atas
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -73,6 +115,7 @@ export default function Navbar() {
   const goTo = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setMenuOpen(false);
+    setActiveId(id);
     if (pathname !== "/") {
       navigate(`/#${id}`);
       return;
@@ -82,6 +125,8 @@ export default function Navbar() {
     if (lenis) lenis.scrollTo(target, { offset: -70, duration: 1.2, force: true });
     else target.scrollIntoView({ behavior: "smooth" });
   };
+
+  const activeLabel = navLinks.find((l) => l.id === activeId)?.label || "Home";
 
   return (
     <>
@@ -110,19 +155,35 @@ export default function Navbar() {
             </span>
           </TransitionLink>
 
-          {/* Desktop Navigation Links — 17-18px, tracking 0.08em, weight 600, gap 32-40px, tap target 44px */}
-          <nav className="hidden lg:flex items-center gap-8 lg:gap-10" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`/#${link.id}`}
-                onClick={goTo(link.id)}
-                className="group relative flex items-center h-11 text-[17px] lg:text-[18px] font-semibold uppercase tracking-[0.08em] text-[#526071] transition-colors duration-200 hover:text-[#0F172A]"
-              >
-                <span>{link.label}</span>
-                <span className="absolute bottom-2 left-0 h-[2px] w-0 bg-[#9A7B38] transition-all duration-300 ease-out group-hover:w-full" />
-              </a>
-            ))}
+          {/* Desktop Navigation Links with Active Section Color Highlight */}
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3" aria-label="Main navigation">
+            {navLinks.map((link) => {
+              const isActive = activeId === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={`/#${link.id}`}
+                  onClick={goTo(link.id)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`nav-pill group relative flex items-center gap-2 h-10 px-3.5 rounded-full text-[15px] xl:text-[16px] font-semibold uppercase tracking-[0.07em] transition-all duration-300 ${
+                    isActive
+                      ? "nav-pill-active bg-[#0F172A] text-[#FFFFFF] shadow-sm"
+                      : "text-[#526071] hover:text-[#0F172A] hover:bg-[#F4F6F8]"
+                  }`}
+                >
+                  {isActive && (
+                    <span
+                      className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse shrink-0"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span>{link.label}</span>
+                  {!isActive && (
+                    <span className="absolute bottom-1.5 left-3.5 right-3.5 h-[2px] scale-x-0 bg-[#9A7B38] transition-transform duration-300 ease-out origin-left group-hover:scale-x-100" />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Status & Jam Surabaya Ringkas (Pill 16-18px, padding 10px 22px, single line) */}
@@ -142,16 +203,23 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Tombol Menu Hamburger untuk Layar < 1024px (Tap target >= 44x44px) */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((open) => !open)}
-            className="lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] px-4 py-2 hairline-frame text-fg hover:border-[#9A7B38] hover:text-[#0F172A] transition-colors focus-visible:outline-[#9A7B38] type-btn bg-[#FFFFFF]"
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-          >
-            {menuOpen ? "CLOSE" : "MENU"}
-          </button>
+          {/* Indikator Halaman Aktif + Tombol Menu Hamburger untuk Layar < 1024px */}
+          <div className="lg:hidden flex items-center gap-2">
+            <div className="nav-pill-active inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0F172A] text-[#FFFFFF] text-[12px] sm:text-[13px] font-semibold uppercase tracking-wider shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse shrink-0" />
+              <span className="truncate max-w-[120px] sm:max-w-[160px]">{activeLabel}</span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen((open) => !open)}
+              className="flex items-center justify-center min-h-[44px] min-w-[44px] px-4 py-2 hairline-frame text-fg hover:border-[#9A7B38] hover:text-[#0F172A] transition-colors focus-visible:outline-[#9A7B38] type-btn bg-[#FFFFFF]"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {menuOpen ? "CLOSE" : "MENU"}
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -178,24 +246,36 @@ export default function Navbar() {
               }}
               className="flex flex-col my-auto"
             >
-              {navLinks.map((link, index) => (
-                <div key={link.id} className="overflow-hidden border-b border-[rgba(15,23,42,0.08)]">
-                  <motion.a
-                    href={`/#${link.id}`}
-                    onClick={goTo(link.id)}
-                    variants={{
-                      hidden: { y: "110%" },
-                      show: { y: "0%", transition: { duration: 0.7, ease: CURTAIN_EASE } },
-                    }}
-                    className="flex items-baseline justify-between py-3.5 font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight text-fg hover:text-[#0F172A] transition-colors"
-                  >
-                    <span>{link.label}</span>
-                    <span className="type-label text-[#856404]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </motion.a>
-                </div>
-              ))}
+              {navLinks.map((link, index) => {
+                const isActive = activeId === link.id;
+                return (
+                  <div key={link.id} className="overflow-hidden border-b border-[rgba(15,23,42,0.08)]">
+                    <motion.a
+                      href={`/#${link.id}`}
+                      onClick={goTo(link.id)}
+                      variants={{
+                        hidden: { y: "110%" },
+                        show: { y: "0%", transition: { duration: 0.7, ease: CURTAIN_EASE } },
+                      }}
+                      className={`flex items-center justify-between py-3.5 px-3 rounded-xl font-serif text-3xl sm:text-4xl md:text-5xl tracking-tight transition-colors ${
+                        isActive
+                          ? "bg-[#0F172A]/8 text-[#856404] font-semibold"
+                          : "text-fg hover:text-[#0F172A]"
+                      }`}
+                    >
+                      <span className="flex items-center gap-3">
+                        {isActive && (
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#856404] shrink-0" />
+                        )}
+                        <span>{link.label}</span>
+                      </span>
+                      <span className="type-label text-[#856404]">
+                        {isActive ? "ACTIVE" : String(index + 1).padStart(2, "0")}
+                      </span>
+                    </motion.a>
+                  </div>
+                );
+              })}
             </motion.nav>
 
             <motion.div

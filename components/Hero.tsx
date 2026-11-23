@@ -137,77 +137,98 @@ export default function Hero() {
 
       <div className="editorial-container my-auto py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Kolom Kiri: Role, Nama, Tagline, dan Aksi */}
-          <div className="lg:col-span-7 xl:col-span-7 space-y-6 sm:space-y-7">
-            <p data-hero-fade className="type-label tracking-[0.2em] text-[#0F172A] text-[16px] sm:text-[18px] font-bold">
-              {siteProfile.role}
-            </p>
-            <h1 data-hero-title className="type-hero select-none text-fg will-change-transform break-words">
-              {siteProfile.name}
-            </h1>
-            <p data-hero-tagline className="text-[clamp(24px,2.2vw,36px)] font-serif font-normal leading-[1.4] text-fg/90 max-w-2xl pt-1">
-              {siteProfile.tagline}
-            </p>
+          {/* Kolom Kiri: macOS / iOS Window Frame berisi Role, Nama, Tagline, dan Aksi */}
+          <div className="lg:col-span-7 xl:col-span-7">
+            <div className="rounded-2xl sm:rounded-3xl border border-[rgba(15,23,42,0.1)] bg-[#FFFFFF] shadow-[0_20px_50px_-24px_rgba(15,23,42,0.16)] overflow-hidden">
+              {/* macOS / iOS Window Top Border Bar */}
+              <div className="px-4 sm:px-6 py-3 sm:py-3.5 border-b border-[rgba(15,23,42,0.08)] bg-[#F8FAFC] flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 shrink-0" aria-hidden="true">
+                  <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FF5F56] shadow-xs" />
+                  <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FFBD2E] shadow-xs" />
+                  <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#27C93F] shadow-xs" />
+                </div>
+                <span className="font-mono text-[12px] sm:text-[13px] text-[#526071] truncate">
+                  ~/portfolio/elang.tsx
+                </span>
+                <div className="w-11 sm:w-12 shrink-0 hidden sm:block" aria-hidden="true" />
+              </div>
 
-            {/* Social Profile Circles (LinkedIn, Instagram, GitHub) with authentic brand colors */}
-            <div data-hero-fade className="pt-2 flex items-center gap-3.5">
-              <a
-                href={siteProfile.socials.find(s => s.label.toLowerCase() === "linkedin")?.href || "https://linkedin.com"}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                className="w-13 h-13 min-w-[52px] min-h-[52px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
-              >
-                <LinkedInIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteProfile.socials.find(s => s.label.toLowerCase() === "instagram")?.href || "https://instagram.com"}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram Profile"
-                className="w-13 h-13 min-w-[52px] min-h-[52px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
-              >
-                <InstagramIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteProfile.socials.find(s => s.label.toLowerCase() === "github")?.href || "https://github.com"}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="w-13 h-13 min-w-[52px] min-h-[52px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
-              >
-                <GitHubIcon className="w-6 h-6" />
-              </a>
-            </div>
+              {/* Hero Window Content */}
+              <div className="p-5 sm:p-8 md:p-10 space-y-5 sm:space-y-6">
+                <p data-hero-fade className="type-label tracking-[0.2em] text-[#0F172A] text-[15px] sm:text-[17px] font-bold">
+                  {siteProfile.role}
+                </p>
+                <h1
+                  data-hero-title
+                  className="font-serif text-[clamp(38px,5vw,78px)] font-light leading-[1.08] tracking-[-0.03em] select-none text-fg will-change-transform break-words"
+                >
+                  {siteProfile.name}
+                </h1>
+                <p data-hero-tagline className="text-[clamp(21px,2vw,32px)] font-serif font-normal leading-[1.4] text-fg/90 max-w-2xl">
+                  {siteProfile.tagline}
+                </p>
 
-            {/* 3 Main Action Pills in English & Soft White/Semi-Grey Palette */}
-            <div data-hero-fade className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-4">
-              {/* Contact Me (Primary Pill) */}
-              <a
-                href="#contact"
-                className="type-btn min-h-[52px] px-8 py-3.5 text-[17px] sm:text-[18px] rounded-full bg-[#0F172A] text-[#FFFFFF] hover:bg-[#1E293B] shadow-sm hover:shadow-md transition-all duration-300 inline-flex items-center justify-center font-semibold"
-              >
-                Contact Me
-              </a>
+                {/* Social Profile Circles (LinkedIn, Instagram, GitHub) with authentic brand colors */}
+                <div data-hero-fade className="pt-1 flex items-center gap-3.5">
+                  <a
+                    href={siteProfile.socials.find(s => s.label.toLowerCase() === "linkedin")?.href || "https://linkedin.com"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile"
+                    className="w-12 h-12 sm:w-13 sm:h-13 min-w-[48px] min-h-[48px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
+                  >
+                    <LinkedInIcon className="w-6 h-6" />
+                  </a>
+                  <a
+                    href={siteProfile.socials.find(s => s.label.toLowerCase() === "instagram")?.href || "https://instagram.com"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Profile"
+                    className="w-12 h-12 sm:w-13 sm:h-13 min-w-[48px] min-h-[48px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
+                  >
+                    <InstagramIcon className="w-6 h-6" />
+                  </a>
+                  <a
+                    href={siteProfile.socials.find(s => s.label.toLowerCase() === "github")?.href || "https://github.com"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub Profile"
+                    className="w-12 h-12 sm:w-13 sm:h-13 min-w-[48px] min-h-[48px] rounded-full bg-[#FFFFFF] hover:bg-[#F8FAFC] border border-[rgba(15,23,42,0.12)] shadow-xs hover:shadow-md flex items-center justify-center transition-all duration-300 hover:scale-105"
+                  >
+                    <GitHubIcon className="w-6 h-6" />
+                  </a>
+                </div>
 
-              {/* Download CV (Secondary Pill in Soft White-Grey) */}
-              <a
-                href="/cv.pdf"
-                download="CV-Mochamad-Elang-Samudra.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="type-btn min-h-[52px] px-8 py-3.5 text-[17px] sm:text-[18px] rounded-full bg-[#FFFFFF] hover:bg-[#F4F6F8] text-[#0F172A] border border-[rgba(15,23,42,0.12)] shadow-xs hover:border-[rgba(15,23,42,0.24)] transition-all duration-300 inline-flex items-center justify-center font-semibold"
-              >
-                Download CV
-              </a>
+                {/* 3 Main Action Pills in English & Soft White/Semi-Grey Palette */}
+                <div data-hero-fade className="pt-1 flex flex-wrap items-center gap-3 sm:gap-3.5">
+                  {/* Contact Me (Primary Pill) */}
+                  <a
+                    href="#contact"
+                    className="type-btn min-h-[48px] sm:min-h-[52px] px-6 sm:px-8 py-3 sm:py-3.5 text-[15px] sm:text-[17px] rounded-full bg-[#0F172A] text-[#FFFFFF] hover:bg-[#1E293B] shadow-sm hover:shadow-md transition-all duration-300 inline-flex items-center justify-center font-semibold"
+                  >
+                    Contact Me
+                  </a>
 
-              {/* Send Email (Tertiary Pill in Soft White-Grey) */}
-              <a
-                href={`mailto:${siteProfile.email}`}
-                className="type-btn min-h-[52px] px-8 py-3.5 text-[17px] sm:text-[18px] rounded-full bg-[#FFFFFF] hover:bg-[#F4F6F8] text-[#0F172A] border border-[rgba(15,23,42,0.12)] shadow-xs hover:border-[rgba(15,23,42,0.24)] transition-all duration-300 inline-flex items-center justify-center font-semibold"
-              >
-                Send Email
-              </a>
+                  {/* Download CV (Secondary Pill in Soft White-Grey) */}
+                  <a
+                    href="/cv.pdf"
+                    download="CV-Mochamad-Elang-Samudra.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="type-btn min-h-[48px] sm:min-h-[52px] px-6 sm:px-8 py-3 sm:py-3.5 text-[15px] sm:text-[17px] rounded-full bg-[#FFFFFF] hover:bg-[#F4F6F8] text-[#0F172A] border border-[rgba(15,23,42,0.12)] shadow-xs hover:border-[rgba(15,23,42,0.24)] transition-all duration-300 inline-flex items-center justify-center font-semibold"
+                  >
+                    Download CV
+                  </a>
+
+                  {/* Send Email (Tertiary Pill in Soft White-Grey) */}
+                  <a
+                    href={`mailto:${siteProfile.email}`}
+                    className="type-btn min-h-[48px] sm:min-h-[52px] px-6 sm:px-8 py-3 sm:py-3.5 text-[15px] sm:text-[17px] rounded-full bg-[#FFFFFF] hover:bg-[#F4F6F8] text-[#0F172A] border border-[rgba(15,23,42,0.12)] shadow-xs hover:border-[rgba(15,23,42,0.24)] transition-all duration-300 inline-flex items-center justify-center font-semibold"
+                  >
+                    Send Email
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 

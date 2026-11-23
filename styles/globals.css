@@ -104,14 +104,36 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior-x: none;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   min-height: 100dvh;
-  overflow-x: clip;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   line-height: var(--leading-body);
+  overscroll-behavior-x: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -130,7 +152,9 @@ body {
    ========================================================================== */
 .editorial-container {
   width: 100%;
+  max-width: 100%;
   padding-inline: var(--gutter);
+  box-sizing: border-box;
 }
 
 .editorial-grid {

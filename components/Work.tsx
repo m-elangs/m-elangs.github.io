@@ -7,7 +7,7 @@ import TransitionLink from "@/components/motion/TransitionLink";
 export default function Work() {
 
   return (
-    <section id="work" aria-label="Selected Work" className="py-20 sm:py-24 md:py-36 bg-[#FFFFFF]">
+    <section id="work" aria-label="Selected Work" className="py-20 sm:py-24 md:py-36 bg-[#FFFFFF] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
         <div className="border-b border-[rgba(15,23,42,0.08)] mb-10 sm:mb-14 flex items-center justify-between pb-6">

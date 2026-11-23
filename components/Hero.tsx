@@ -102,7 +102,7 @@ export default function Hero() {
     <section
       ref={root}
       aria-label="Introduction"
-      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pb-12 pt-32 md:pt-36 bg-[#FFFFFF]"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pb-12 pt-32 md:pt-36 bg-[#FFFFFF] w-full max-w-full"
     >
       <div className="editorial-container">
         <div data-hero-fade className="p-4 sm:p-5 rounded-xl bg-[#F4F6F8] border border-[rgba(15,23,42,0.08)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">

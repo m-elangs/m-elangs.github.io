@@ -2,7 +2,7 @@ import { certificates } from "@/data/certificates";
 
 export default function Certificates() {
   return (
-    <section id="credentials" aria-label="Certifications and Credentials" className="py-24 md:py-36 hairline-top bg-[#FFFFFF]">
+    <section id="credentials" aria-label="Certifications and Credentials" className="py-24 md:py-36 hairline-top bg-[#FFFFFF] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
         <div className="flex items-center justify-between hairline-bottom pb-6 mb-10 md:mb-12">
@@ -41,7 +41,7 @@ export default function Certificates() {
 
               {/* Credential ID & Link */}
               <div className="col-span-4 md:col-span-4 flex flex-wrap items-center justify-between md:justify-end gap-3 sm:gap-6 mt-3 sm:mt-4 md:mt-0">
-                <code className="type-label font-mono text-[#526071] text-[15px] sm:text-[16px] font-semibold">
+                <code className="type-label font-mono text-[#526071] text-[15px] sm:text-[16px] font-semibold break-all">
                   {cert.credentialId.replace("-GANTI", "")}
                 </code>
                 <a

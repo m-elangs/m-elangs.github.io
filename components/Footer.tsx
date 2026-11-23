@@ -10,7 +10,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.12)] py-12 sm:py-16 bg-[#0F172A] text-[#94A3B8]">
+    <footer className="border-t border-[rgba(255,255,255,0.12)] py-12 sm:py-16 bg-[#0F172A] text-[#94A3B8] overflow-hidden w-full max-w-full">
       <div className="editorial-container space-y-10 sm:space-y-14">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8">
           <div>

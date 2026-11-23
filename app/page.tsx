@@ -17,7 +17,7 @@ export default function HomePage() {
     <SmoothScroll>
       <CustomCursor />
       <Navbar />
-      <main className="min-h-dvh">
+      <main className="min-h-dvh w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Work />

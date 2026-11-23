@@ -20,7 +20,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" aria-label="About the Practice" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8]">
+    <section id="about" aria-label="About the Practice" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
         <div className="flex items-center justify-between border-b border-[rgba(15,23,42,0.08)] pb-6 mb-12 md:mb-16">

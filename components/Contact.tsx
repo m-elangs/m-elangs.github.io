@@ -94,7 +94,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-label="Contact and Inquiries"
-      className="py-24 sm:py-28 md:py-36 bg-[#FFFFFF] text-fg border-t border-[rgba(15,23,42,0.08)]"
+      className="py-24 sm:py-28 md:py-36 bg-[#FFFFFF] text-fg border-t border-[rgba(15,23,42,0.08)] overflow-hidden w-full max-w-full"
     >
       <div className="editorial-container space-y-12 sm:space-y-16">
         {/* Section Header */}

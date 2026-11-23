@@ -2,7 +2,7 @@ import { services } from "@/data/experience";
 
 export default function Services() {
   return (
-    <section id="services" aria-label="Services and Capabilities" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8]">
+    <section id="services" aria-label="Services and Capabilities" className="py-20 sm:py-24 md:py-36 border-y border-[rgba(15,23,42,0.08)] bg-[#F4F6F8] overflow-hidden w-full max-w-full">
       <div className="editorial-container">
         {/* Section Header */}
         <div className="flex items-center justify-between border-b border-[rgba(15,23,42,0.08)] pb-6 mb-10 md:mb-12">

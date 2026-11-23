@@ -49,10 +49,10 @@ export const projects: ProjectItem[] = [
     outcome:
       "Average reading depth rose to 4.2 minutes per visit and generated three residential commissions within two months of launch. [GANTI]",
     deliverables: [
-      "Visual Direction",
-      "Editorial Grid System",
-      "Next.js Frontend",
-      "Scroll Choreography",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
     ],
     liveUrl: "https://example.com/studio-karsa",
     coverImage: "/images/work-karsa.svg",
@@ -61,12 +61,17 @@ export const projects: ProjectItem[] = [
       {
         src: "/images/work-karsa.svg",
         alt: "Studio Karsa homepage monograph layout [GANTI]",
-        caption: "Asymmetric index plate with hairline dividers.",
+        caption: "Slide 01 — Homepage Monograph & Asymmetric Index Layout",
       },
       {
         src: "/images/work-karsa-detail.svg",
         alt: "Studio Karsa project detail spread [GANTI]",
-        caption: "Full-bleed architectural study and material notes.",
+        caption: "Slide 02 — Full-Bleed Architectural Study & Material Notes",
+      },
+      {
+        src: "/images/work-surya.svg",
+        alt: "Studio Karsa responsive mobile catalog view",
+        caption: "Slide 03 — Responsive Exhibition Catalogue & Typography Grid",
       },
     ],
     metrics: [
@@ -92,9 +97,10 @@ export const projects: ProjectItem[] = [
     outcome:
       "First seasonal collection of 120 numbered pieces sold through private inquiry within 72 hours. [GANTI]",
     deliverables: [
-      "Interactive Catalogue",
-      "Motion Direction",
-      "Performance Engineering",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Framer Motion",
     ],
     liveUrl: "https://example.com/atelier-surya",
     coverImage: "/images/work-surya.svg",
@@ -103,7 +109,17 @@ export const projects: ProjectItem[] = [
       {
         src: "/images/work-surya.svg",
         alt: "Atelier Surya collection spread [GANTI]",
-        caption: "Edition listing with restrained typographic hierarchy.",
+        caption: "Slide 01 — Main Digital Showroom & Edition Listing",
+      },
+      {
+        src: "/images/work-karsa-detail.svg",
+        alt: "Atelier Surya ceramic specification view",
+        caption: "Slide 02 — Technical Metadata & Ceramic Firing Specifications",
+      },
+      {
+        src: "/images/work-nusa.svg",
+        alt: "Atelier Surya private inquiry checkout flow",
+        caption: "Slide 03 — Private Collector Inquiry & Archive Preview",
       },
     ],
     metrics: [
@@ -129,9 +145,10 @@ export const projects: ProjectItem[] = [
     outcome:
       "Featured in two international typography annuals and doubled direct studio license orders quarter-over-quarter. [GANTI]",
     deliverables: [
-      "Type Tester Engine",
-      "Design System",
-      "Variable Font Pipeline",
+      "TypeScript",
+      "React.js",
+      "CSS Variables",
+      "Web Fonts API",
     ],
     liveUrl: "https://example.com/nusa-foundry",
     coverImage: "/images/work-nusa.svg",
@@ -140,7 +157,17 @@ export const projects: ProjectItem[] = [
       {
         src: "/images/work-nusa.svg",
         alt: "Nusa Type interactive specimen view [GANTI]",
-        caption: "Live glyph inspection and optical size controls.",
+        caption: "Slide 01 — Interactive Type Specimen & Live Glyph Tester",
+      },
+      {
+        src: "/images/work-senyap.svg",
+        alt: "Nusa Type variable axes inspector",
+        caption: "Slide 02 — Variable Font Axis Controls & Optical Sizes",
+      },
+      {
+        src: "/images/work-karsa-detail.svg",
+        alt: "Nusa Type licensing storefront",
+        caption: "Slide 03 — Studio Licensing Calculator & Specimen Poster",
       },
     ],
     metrics: [
@@ -166,9 +193,10 @@ export const projects: ProjectItem[] = [
     outcome:
       "Grew print-plus-digital readership to 14,000 subscribers across Jakarta, Surabaya, and Singapore. [GANTI]",
     deliverables: [
-      "Editorial Layout",
-      "Marginalia System",
-      "Headless Publishing",
+      "Next.js",
+      "Laravel",
+      "Tailwind CSS",
+      "MySQL",
     ],
     liveUrl: "https://example.com/ruang-senyap",
     coverImage: "/images/work-senyap.svg",
@@ -177,7 +205,17 @@ export const projects: ProjectItem[] = [
       {
         src: "/images/work-senyap.svg",
         alt: "Ruang Senyap reading view [GANTI]",
-        caption: "Long-form typography with outer-column footnotes.",
+        caption: "Slide 01 — Long-Form Editorial Reading Spread & Marginalia",
+      },
+      {
+        src: "/images/work-karsa.svg",
+        alt: "Ruang Senyap archive index",
+        caption: "Slide 02 — Biannual Issue Archive & Essay Index",
+      },
+      {
+        src: "/images/work-surya.svg",
+        alt: "Ruang Senyap mobile reading layout",
+        caption: "Slide 03 — Responsive Footnote Drawer & Reader Mode",
       },
     ],
     metrics: [

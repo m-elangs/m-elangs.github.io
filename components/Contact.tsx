@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { siGithub } from "simple-icons";
 import { siteProfile } from "@/data/site";
+import IsometricTerminal3D from "@/components/IsometricTerminal3D";
 
 function MailIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
@@ -181,6 +182,11 @@ export default function Contact() {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* 3D Isometric Floating Code Terminal Showcase below Social & Repositories */}
+        <div className="pt-2 sm:pt-4">
+          <IsometricTerminal3D />
         </div>
       </div>
     </section>

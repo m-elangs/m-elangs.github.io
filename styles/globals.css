@@ -474,3 +474,214 @@ canvas {
 .ws-theme-transition {
   transition: fill 0.45s ease, stroke 0.45s ease, opacity 0.45s ease;
 }
+
+/* ==========================================================================
+   ISOMETRIC FLOATING CODE TERMINAL 3D ANIMATIONS (SCOPED TO .iso-terminal-wrap)
+   ========================================================================== */
+.iso-terminal-wrap {
+  --iso-float-duration: 4.8s;
+  --iso-badge-duration: 4.2s;
+  --iso-cursor-duration: 0.95s;
+  --iso-scan-duration: 3.8s;
+  --iso-spark-duration: 4.5s;
+}
+
+.iso-terminal-wrap.iso-fast {
+  --iso-float-duration: 2.1s;
+  --iso-badge-duration: 1.75s;
+  --iso-cursor-duration: 0.42s;
+  --iso-scan-duration: 1.4s;
+  --iso-spark-duration: 1.9s;
+}
+
+@keyframes isoFloatTerminal {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes isoFloatBackdrop {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes isoFloatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes isoShadowSync {
+  0%, 100% {
+    transform: translate(315px, 456px) rotate(26deg) scale(1);
+    opacity: 0.48;
+  }
+  50% {
+    transform: translate(315px, 456px) rotate(26deg) scale(0.84);
+    opacity: 0.26;
+  }
+}
+
+@keyframes isoBlinkCursor {
+  0%, 48% { opacity: 1; }
+  52%, 100% { opacity: 0; }
+}
+
+@keyframes isoCodeScan {
+  0% { transform: scaleX(0.18); opacity: 0.55; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0.18); opacity: 0.55; }
+}
+
+@keyframes isoSparkRise {
+  0% { transform: translateY(12px) scale(0.7); opacity: 0; }
+  25% { opacity: 0.95; }
+  80% { opacity: 0.85; }
+  100% { transform: translateY(-38px) scale(1.1); opacity: 0; }
+}
+
+.iso-terminal-float {
+  animation: isoFloatTerminal var(--iso-float-duration) ease-in-out infinite;
+}
+
+.iso-backdrop-float {
+  animation: isoFloatBackdrop var(--iso-float-duration) ease-in-out infinite;
+  animation-delay: -0.9s;
+}
+
+.iso-badge-front-float {
+  animation: isoFloatBadge var(--iso-badge-duration) ease-in-out infinite;
+  animation-delay: -0.5s;
+}
+
+.iso-badge-top-float {
+  animation: isoFloatBadge var(--iso-badge-duration) ease-in-out infinite;
+  animation-delay: -1.7s;
+}
+
+.iso-ground-shadow {
+  animation: isoShadowSync var(--iso-float-duration) ease-in-out infinite;
+}
+
+.iso-cursor {
+  animation: isoBlinkCursor var(--iso-cursor-duration) steps(1, end) infinite;
+}
+
+.iso-code-typing {
+  transform-origin: 0px 0px;
+  animation: isoCodeScan var(--iso-scan-duration) ease-in-out infinite;
+}
+
+.iso-spark-1 { animation: isoSparkRise var(--iso-spark-duration) ease-out infinite; }
+.iso-spark-2 { animation: isoSparkRise var(--iso-spark-duration) ease-out infinite 1.4s; }
+.iso-spark-3 { animation: isoSparkRise var(--iso-spark-duration) ease-out infinite 2.7s; }
+
+.iso-parallax-layer {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* ==========================================================================
+   WEBSITE GRADIENT THEME (TOGGLED BY LAMP SWITCH ABOVE HERO PHOTO)
+   Inspired by Teal-Cyan & Deep Violet Gradient Color Palette
+   ========================================================================== */
+html[data-site-theme="gradient"] {
+  --color-bg: #060412;
+  --color-surface: rgba(15, 18, 38, 0.65);
+  --color-surface-card: rgba(17, 21, 44, 0.78);
+  --color-surface-elevated: rgba(28, 34, 66, 0.85);
+  --color-fg: #f8fafc;
+  --color-muted: #cbd5e1;
+  --color-accent: #2dd4bf;
+  --color-champagne: #38bdf8;
+  --color-champagne-dark: #2dd4bf;
+  --color-border: rgba(148, 163, 184, 0.16);
+  --color-border-strong: rgba(148, 163, 184, 0.3);
+  background-color: #060412;
+  color-scheme: dark;
+}
+
+html[data-site-theme="gradient"] body {
+  background-color: #060412;
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(13, 148, 136, 0.34) 0%, rgba(6, 182, 212, 0.12) 28%, transparent 56%),
+    radial-gradient(circle at 88% 42%, rgba(126, 34, 206, 0.34) 0%, rgba(88, 28, 135, 0.14) 30%, transparent 58%),
+    radial-gradient(circle at 18% 82%, rgba(14, 116, 144, 0.28) 0%, transparent 52%),
+    radial-gradient(circle at 82% 88%, rgba(107, 33, 168, 0.32) 0%, transparent 54%);
+  background-attachment: fixed;
+  color: #f8fafc;
+}
+
+/* Sections & Surfaces */
+html[data-site-theme="gradient"] section.bg-\[\#FFFFFF\],
+html[data-site-theme="gradient"] main.bg-\[\#FFFFFF\] {
+  background-color: transparent !important;
+}
+
+html[data-site-theme="gradient"] section.bg-\[\#F4F6F8\] {
+  background-color: rgba(10, 12, 28, 0.45) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Navbar */
+html[data-site-theme="gradient"] header {
+  background-color: rgba(7, 6, 20, 0.78) !important;
+  border-color: rgba(148, 163, 184, 0.15) !important;
+}
+
+/* Cards & Containers */
+html[data-site-theme="gradient"] .bg-\[\#FFFFFF\],
+html[data-site-theme="gradient"] .bg-\[\#FFFFFF\]\/95,
+html[data-site-theme="gradient"] .bg-\[\#F8FAFC\],
+html[data-site-theme="gradient"] .bg-\[\#F4F6F8\],
+html[data-site-theme="gradient"] .bg-\[\#F8F9FA\] {
+  background-color: rgba(16, 20, 42, 0.72) !important;
+  backdrop-filter: blur(12px);
+}
+
+html[data-site-theme="gradient"] .hover\:bg-\[\#FFFFFF\]:hover,
+html[data-site-theme="gradient"] .hover\:bg-\[\#EEF2F6\]:hover,
+html[data-site-theme="gradient"] .hover\:bg-\[\#F4F6F8\]:hover,
+html[data-site-theme="gradient"] .hover\:bg-\[\#F1F5F9\]:hover {
+  background-color: rgba(24, 30, 60, 0.9) !important;
+}
+
+/* Text Colors */
+html[data-site-theme="gradient"] .text-\[\#0F172A\],
+html[data-site-theme="gradient"] .text-fg,
+html[data-site-theme="gradient"] .text-fg\/90 {
+  color: #f8fafc !important;
+}
+
+html[data-site-theme="gradient"] .text-\[\#526071\],
+html[data-site-theme="gradient"] .text-muted {
+  color: #cbd5e1 !important;
+}
+
+html[data-site-theme="gradient"] .text-\[\#856404\] {
+  color: #2dd4bf !important;
+}
+
+/* Borders */
+html[data-site-theme="gradient"] .border-\[rgba\(15\,23\,42\,0\.08\)\],
+html[data-site-theme="gradient"] .border-\[rgba\(15\,23\,42\,0\.06\)\],
+html[data-site-theme="gradient"] .border-\[rgba\(15\,23\,42\,0\.12\)\] {
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+/* Primary Action Buttons */
+html[data-site-theme="gradient"] a.bg-\[\#0F172A\],
+html[data-site-theme="gradient"] button.bg-\[\#0F172A\] {
+  background: linear-gradient(135deg, #0d9488 0%, #6d28d9 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(45, 212, 191, 0.35) !important;
+}
+
+html[data-site-theme="gradient"] a.bg-\[\#0F172A\]:hover,
+html[data-site-theme="gradient"] button.bg-\[\#0F172A\]:hover {
+  filter: brightness(1.12);
+}
+
+/* Footer in Gradient Theme */
+html[data-site-theme="gradient"] footer.bg-\[\#0F172A\] {
+  background-color: rgba(5, 4, 16, 0.88) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}

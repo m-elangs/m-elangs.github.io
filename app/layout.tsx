@@ -48,6 +48,11 @@ export default function RootLayout({
       className={`${cormorantGaramond.variable} ${dmSans.variable}`}
     >
       <body className="bg-bg text-fg font-sans antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('site-theme')==='gradient'){document.documentElement.setAttribute('data-site-theme','gradient')}}catch(e){}`,
+          }}
+        />
         <div className="grain-overlay" aria-hidden="true" />
         {children}
       </body>

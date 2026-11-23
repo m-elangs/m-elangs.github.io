@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { siGithub } from "simple-icons";
 import { gsap, SplitText, useGSAP, FULL_MOTION } from "@/lib/gsap";
@@ -58,6 +58,26 @@ function GitHubIcon({ className = "w-6 h-6" }: { className?: string }) {
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
   const { introDone } = useIntro();
+  const [siteTheme, setSiteTheme] = useState<"white" | "gradient">("white");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("site-theme");
+    if (saved === "gradient") {
+      setSiteTheme("gradient");
+      document.documentElement.setAttribute("data-site-theme", "gradient");
+    }
+  }, []);
+
+  const toggleSiteTheme = () => {
+    const next = siteTheme === "white" ? "gradient" : "white";
+    setSiteTheme(next);
+    if (next === "gradient") {
+      document.documentElement.setAttribute("data-site-theme", "gradient");
+    } else {
+      document.documentElement.removeAttribute("data-site-theme");
+    }
+    window.localStorage.setItem("site-theme", next);
+  };
 
   useGSAP(
     () => {
@@ -191,9 +211,52 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Kolom Kanan: Foto Profil Editorial (Posisi seimbang lebih ke tengah) */}
-          <div data-hero-fade className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-center items-center">
-            <div className="relative aspect-[3/4] w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[360px] overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#F8FAFC] shadow-xl group hover:shadow-2xl transition-all duration-500">
+          {/* Kolom Kanan: Lamp Switch + Foto Profil Editorial */}
+          <div data-hero-fade className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center items-center gap-3.5">
+            {/* Lamp Feature Toggle above Portrait */}
+            <div className="w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[360px] flex items-center justify-between px-3.5 py-2 rounded-full border border-[rgba(15,23,42,0.12)] bg-[#FFFFFF] shadow-xs">
+              <span className="text-[12px] sm:text-[13px] font-mono uppercase tracking-wider text-[#526071] font-semibold">
+                {siteTheme === "gradient" ? "Gradient Theme" : "White Theme"}
+              </span>
+              <button
+                type="button"
+                onClick={toggleSiteTheme}
+                aria-label={
+                  siteTheme === "gradient"
+                    ? "Switch website to White theme"
+                    : "Switch website to Dark Gradient theme"
+                }
+                aria-pressed={siteTheme === "gradient"}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[12px] sm:text-[13px] font-semibold transition-all duration-300 cursor-pointer ${
+                  siteTheme === "gradient"
+                    ? "bg-gradient-to-r from-teal-500 to-purple-600 text-white shadow-[0_0_16px_rgba(45,212,191,0.5)]"
+                    : "bg-[#0F172A] text-[#FFFFFF] hover:bg-[#1E293B]"
+                }`}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    siteTheme === "gradient" ? "text-amber-300 scale-110" : "text-amber-300"
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 18h6m-5 3h4M12 2a7 7 0 0 0-4 12.74V16a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1.26A7 7 0 0 0 12 2z"
+                  />
+                </svg>
+                <span>{siteTheme === "gradient" ? "Lamp On" : "Lamp Off"}</span>
+              </button>
+            </div>
+
+            <div
+              className={`relative aspect-[3/4] w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[360px] overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.08)] bg-[#F8FAFC] shadow-xl group hover:shadow-2xl transition-all duration-500 ${
+                siteTheme === "gradient" ? "ring-2 ring-teal-400/35 shadow-[0_0_40px_rgba(109,40,217,0.3)]" : ""
+              }`}
+            >
               <Image
                 src="/images/fotoformal.jpg"
                 alt={siteProfile.portraitAlt}

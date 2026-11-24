@@ -335,14 +335,14 @@ export default function IsometricTerminal3D() {
               </filter>
             </defs>
 
-            {/* Layer 1: Ground Shadow */}
+            {/* Layer 1: Ground Shadow (GPU-friendly opacity without heavy SVG blur filter) */}
             <ellipse
               cx="0"
               cy="0"
-              rx="155"
-              ry="44"
+              rx="145"
+              ry="38"
               fill="var(--iso-shadow-color)"
-              filter="url(#isoGroundBlur)"
+              opacity="0.38"
               className="iso-ground-shadow"
             />
 
@@ -373,7 +373,7 @@ export default function IsometricTerminal3D() {
               className="iso-parallax-layer"
               style={{ transform: `translate(${parallax.mx}px, ${parallax.my}px)` }}
             >
-              <g className="iso-terminal-float" filter="url(#isoLayerShadow)">
+              <g className="iso-terminal-float">
                 <polygon points="172,102 194,89.3 454,239.3 432,252" fill="url(#isoTopWallGrad)" />
                 <line
                   x1="194"
@@ -476,7 +476,7 @@ export default function IsometricTerminal3D() {
               className="iso-parallax-layer"
               style={{ transform: `translate(${parallax.fx}px, ${parallax.fy}px)` }}
             >
-              <g className="iso-badge-front-float" filter="url(#isoLayerShadow)">
+              <g className="iso-badge-front-float">
                 <polygon points="126,274 204,319 204,386 126,341" fill="#020617" opacity="0.32" />
                 <polygon points="116,262 132,252.8 210,297.8 194,307" fill="url(#isoTopWallGrad)" />
                 <polygon points="194,307 210,297.8 210,364.8 194,374" fill="url(#isoSideWallGrad)" />
@@ -503,7 +503,7 @@ export default function IsometricTerminal3D() {
                 </g>
               </g>
 
-              <g className="iso-badge-top-float" filter="url(#isoLayerShadow)">
+              <g className="iso-badge-top-float">
                 <polygon points="462,158 475,150.5 527,180.5 514,188" fill="url(#isoTopWallGrad)" />
                 <polygon points="514,188 527,180.5 527,230.5 514,238" fill="url(#isoSideWallGrad)" />
                 <polygon

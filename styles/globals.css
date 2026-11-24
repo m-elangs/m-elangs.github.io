@@ -310,17 +310,10 @@ canvas {
 }
 
 /* ==========================================================================
-   SUBTLE EDITORIAL PAPER TEXTURE OVERLAY
+   SUBTLE EDITORIAL PAPER TEXTURE OVERLAY (DISABLED FOR 120FPS SCROLL)
    ========================================================================== */
 .grain-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  pointer-events: none;
-  opacity: 0.012;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 220px 220px;
+  display: none;
 }
 
 /* ==========================================================================
@@ -601,13 +594,22 @@ html[data-site-theme="gradient"] {
 
 html[data-site-theme="gradient"] body {
   background-color: #060412;
+  color: #f8fafc;
+}
+
+html[data-site-theme="gradient"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
   background-image:
     radial-gradient(circle at 12% 14%, rgba(13, 148, 136, 0.34) 0%, rgba(6, 182, 212, 0.12) 28%, transparent 56%),
     radial-gradient(circle at 88% 42%, rgba(126, 34, 206, 0.34) 0%, rgba(88, 28, 135, 0.14) 30%, transparent 58%),
     radial-gradient(circle at 18% 82%, rgba(14, 116, 144, 0.28) 0%, transparent 52%),
     radial-gradient(circle at 82% 88%, rgba(107, 33, 168, 0.32) 0%, transparent 54%);
-  background-attachment: fixed;
-  color: #f8fafc;
 }
 
 /* Sections & Surfaces */
@@ -617,24 +619,22 @@ html[data-site-theme="gradient"] main.bg-\[\#FFFFFF\] {
 }
 
 html[data-site-theme="gradient"] section.bg-\[\#F4F6F8\] {
-  background-color: rgba(10, 12, 28, 0.45) !important;
-  backdrop-filter: blur(8px);
+  background-color: rgba(10, 12, 28, 0.55) !important;
 }
 
 /* Navbar */
 html[data-site-theme="gradient"] header {
-  background-color: rgba(7, 6, 20, 0.78) !important;
+  background-color: rgba(7, 6, 20, 0.85) !important;
   border-color: rgba(148, 163, 184, 0.15) !important;
 }
 
-/* Cards & Containers */
+/* Cards & Containers (GPU-friendly solid/translucent without heavy per-card blur) */
 html[data-site-theme="gradient"] .bg-\[\#FFFFFF\],
 html[data-site-theme="gradient"] .bg-\[\#FFFFFF\]\/95,
 html[data-site-theme="gradient"] .bg-\[\#F8FAFC\],
 html[data-site-theme="gradient"] .bg-\[\#F4F6F8\],
 html[data-site-theme="gradient"] .bg-\[\#F8F9FA\] {
-  background-color: rgba(16, 20, 42, 0.72) !important;
-  backdrop-filter: blur(12px);
+  background-color: rgba(16, 20, 42, 0.86) !important;
 }
 
 html[data-site-theme="gradient"] .hover\:bg-\[\#FFFFFF\]:hover,

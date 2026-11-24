@@ -27,45 +27,56 @@ export default function CustomCursor() {
     let mouseY = 0;
     let ringX = 0;
     let ringY = 0;
+    let visible = false;
+    let hovered = false;
+    let text = "";
     let animationFrameId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      if (!isVisible) setIsVisible(true);
+      if (!visible) {
+        visible = true;
+        ringX = mouseX;
+        ringY = mouseY;
+        setIsVisible(true);
+      }
 
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       }
 
-      // Check hover targets
+      // Check hover targets only when needed
       const target = e.target as HTMLElement | null;
       const clickable = target?.closest(
         "a, button, [data-cursor-view], [data-cursor-hover]"
       );
 
-      if (clickable) {
-        setIsHovered(true);
-        if (clickable.getAttribute("data-cursor-view") !== null) {
-          setCursorText("VIEW");
-        } else {
-          setCursorText("");
-        }
-      } else {
-        setIsHovered(false);
-        setCursorText("");
+      const nextHovered = Boolean(clickable);
+      const nextText =
+        clickable && clickable.getAttribute("data-cursor-view") !== null
+          ? "VIEW"
+          : "";
+
+      if (nextHovered !== hovered) {
+        hovered = nextHovered;
+        setIsHovered(nextHovered);
+      }
+      if (nextText !== text) {
+        text = nextText;
+        setCursorText(nextText);
       }
     };
 
     const handleMouseLeave = () => {
+      visible = false;
       setIsVisible(false);
     };
 
     const render = () => {
-      // Smooth lerp for outer ring
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
+      ringX += (mouseX - ringX) * 0.22;
+      ringY += (mouseY - ringY) * 0.22;
 
       if (ringRef.current) {
         ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
@@ -83,7 +94,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isVisible]);
+  }, []);
 
   if (isTouchDevice) return null;
 
@@ -96,8 +107,8 @@ export default function CustomCursor() {
       {/* Center pinpoint */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 -ml-1 -mt-1 h-2 w-2 rounded-full bg-[#9A7B38] transition-transform duration-75 will-change-transform ${
-          isHovered ? "scale-0" : "scale-100"
+        className={`fixed top-0 left-0 -ml-1 -mt-1 h-2 w-2 rounded-full bg-[#9A7B38] will-change-transform ${
+          isHovered ? "opacity-0" : "opacity-100"
         }`}
       />
 

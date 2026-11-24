@@ -223,6 +223,14 @@ export default function Work() {
             );
           })}
         </div>
+
+        {/* More Coming Soon Section */}
+        <div className="mt-16 sm:mt-24 flex flex-col items-center justify-center text-center select-none">
+          <p className="text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] text-[#334155] uppercase font-sans">
+            MORE COMING SOON
+          </p>
+          <div className="mt-4 w-20 sm:w-28 h-[2px] bg-[#0284C7] rounded-full" />
+        </div>
       </div>
 
       {/* Interactive Website Photo Slideshow Lightbox Modal (When Inspect is Clicked) */}

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
 @import "tailwindcss";
 
 /* ==========================================================================
@@ -89,8 +90,8 @@
   --color-border: var(--color-border);
   --color-border-strong: var(--color-border-strong);
 
-  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
 }
 
 /* ==========================================================================

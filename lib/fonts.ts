@@ -1,19 +1,10 @@
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+// Elegant editorial typography tokens with web-font CDN fallback
+export const cormorantGaramond = {
+  variable: "font-display",
+  className: "font-display",
+};
 
-export const cormorantGaramond = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-  preload: true,
-});
-
-export const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal"],
-  variable: "--font-sans",
-  display: "swap",
-  preload: true,
-});
+export const dmSans = {
+  variable: "font-sans",
+  className: "font-sans",
+};

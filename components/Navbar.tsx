@@ -148,8 +148,6 @@ export default function Navbar() {
     window.scrollTo({ top, behavior: "smooth" });
   };
 
-  const activeLabel = navLinks.find((l) => l.id === activeId)?.label || "Home";
-
   return (
     <>
       <header
@@ -223,23 +221,16 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Active Page Indicator + Mobile Hamburger Button (< 1024px) */}
-          <div className="lg:hidden flex items-center gap-2">
-            <div className="nav-pill-active inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0F172A] text-[#FFFFFF] text-[12px] sm:text-[13px] font-semibold uppercase tracking-wider shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0" />
-              <span className="truncate max-w-[120px] sm:max-w-[160px]">{activeLabel}</span>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setMenuOpen((open) => !open)}
-              className="flex items-center justify-center min-h-[44px] min-w-[44px] px-4 py-2 hairline-frame text-fg hover:border-[#9A7B38] hover:text-[#0F172A] transition-colors focus-visible:outline-[#9A7B38] type-btn bg-[#FFFFFF]"
-              aria-expanded={menuOpen}
-              aria-controls="mobile-navigation"
-            >
-              {menuOpen ? "CLOSE" : "MENU"}
-            </button>
-          </div>
+          {/* Tombol Menu Hamburger untuk Layar < 1024px (Tap target >= 44x44px) */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] px-4 py-2 hairline-frame text-fg hover:border-[#9A7B38] hover:text-[#0F172A] transition-colors focus-visible:outline-[#9A7B38] type-btn bg-[#FFFFFF] shrink-0"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {menuOpen ? "CLOSE" : "MENU"}
+          </button>
         </div>
       </header>
 
